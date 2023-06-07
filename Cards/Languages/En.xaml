@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=netstandard">
+    <system:String x:Key="LoginPage1">Hello!</system:String>
+    <system:String x:Key="LoginPage2">Please select an operating mode.</system:String>
+    <system:String x:Key="LoginPage3">Education</system:String>
+    <system:String x:Key="LoginPage4">Editor</system:String>
+    <system:String x:Key="EducationPage1">Decks</system:String>
+    <system:String x:Key="EducationPage2">F.A.Q</system:String>
+    <system:String x:Key="EducationPage3">Write to us</system:String>
+    <system:String x:Key="EducationPage4">Support us</system:String>
+    <system:String x:Key="EducationPage5">Oops</system:String>
+    <system:String x:Key="EducationPage6">You don't have any cards yet!</system:String>
+    <system:String x:Key="EducationPage7">Favorites</system:String>
+    <system:String x:Key="EditorPage1">Decks</system:String>
+    <system:String x:Key="EditorPage2">Cards</system:String>
+    <system:String x:Key="EditorPage3">Editing</system:String>
+    <system:String x:Key="EditorPage4">word</system:String>
+    <system:String x:Key="EditorPage5">translation</system:String>
+    <system:String x:Key="EditorPage6">Save</system:String>
+    <system:String x:Key="EditorPage7">Enter a word or phrase</system:String>
+    <system:String x:Key="EditorPage8">Removed</system:String>
+    <system:String x:Key="EditorPage9">Saved</system:String>
+    <system:String x:Key="EditorPage10">Card</system:String>
+    <system:String x:Key="HubControl1">EDUCATION</system:String>
+    <system:String x:Key="HubControl2">CREATION</system:String>
+    <system:String x:Key="CreateDeckControl1">Enter deck name</system:String>
+    <system:String x:Key="CreateDeckControl2">Creation</system:String>
+    <system:String x:Key="CreateDeckControl3">Create</system:String>
+    <system:String x:Key="CreateDeckControl4">Editing</system:String>
+    <system:String x:Key="CreateDeckControl5">Save</system:String>
+    <system:String x:Key="DeleteDeckControl1">Delete?</system:String>
+    <system:String x:Key="DeleteDeckControl2">Yes</system:String>
+    <system:String x:Key="DeleteDeckControl3">No</system:String>
+</ResourceDictionary>

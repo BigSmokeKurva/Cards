@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Cards.LoginPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cards"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="893" Background="#FF000916">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="/Assets/LoginPageImg.png"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Margin="20,0,0,0">
+                <Label Content="{DynamicResource LoginPage1}" FontSize="30" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}"/>
+                <Label Content="{DynamicResource LoginPage2}" FontSize="15" Foreground="#ffffff" Margin="0,10,0,0" FontFamily="{StaticResource Source Sans Pro}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,35,0,0">
+                    <Button Content="{DynamicResource LoginPage3}" Style="{StaticResource LoginPageButton}" Tag="EducationPage" Click="GoToNextPage" FontFamily="{StaticResource Source Sans Pro}"/>
+                    <Button Content="{DynamicResource LoginPage4}" Style="{StaticResource LoginPageButton}" Margin="20,0,0,0" Tag="EditorPage" Click="GoToNextPage" FontFamily="{StaticResource Source Sans Pro}"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid Grid.Row="2" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10">
+                <ComboBox x:Name="LangComboBox" Style="{StaticResource LangComboBox}" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBoxItem Content="English" Tag="En"/>
+                    <ComboBoxItem Content="Russian" Tag="Ru"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

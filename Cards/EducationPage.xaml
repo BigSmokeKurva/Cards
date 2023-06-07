@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="Cards.EducationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cards"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Background="#FF0C1624">
+    <Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Path Fill="#FF132134">
+                <Path.Data>
+                    <GeometryGroup FillRule="Nonzero">
+                        <Geometry>
+                            M50.3209 10.7976L1 89H593L543.973 11.2641C539.944 4.8751 532.919 1 525.365 1H68.0833C60.8732 1 54.1671 4.69897 50.3209 10.7976Z
+                        </Geometry>
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource EducationRandomButton}" HorizontalContentAlignment="Center" Focusable="False" VerticalAlignment="Center" Margin="0,0,58,0" HorizontalAlignment="Center" Width="38.4001007080078" Height="33.1818084716797" Click="RandomCard_Click">
+                </Button>
+                <Button Style="{StaticResource EducationFuncButton}" Click="BackCard_Click" Focusable="False" VerticalAlignment="Center" Margin="0,0,58,0" HorizontalAlignment="Center" Width="23.4002990722656" Height="26.0006008148193">
+                    <Path Fill="#FFACC7EC">
+                        <Path.Data>
+                            <GeometryGroup FillRule="Nonzero">
+                                <Geometry>
+                                    M23.4003 0L5.20006 13.0003L23.4003 26.0006V0ZM5.20006 13.0003V0H0V26.0006H5.20006V13.0003Z
+                                </Geometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Button>
+                <Button Style="{StaticResource EducationFuncButton}" Click="FlipCard_Click" Focusable="False" VerticalAlignment="Center" Margin="0,0,58,0" HorizontalAlignment="Center" Width="63.9599990844726" Height="63.9599952697754">
+                    <Path Fill="#FFACC7EC">
+                        <Path.Data>
+                            <GeometryGroup FillRule="Nonzero">
+                                <Geometry>
+                                    M32.2787 0.000486461C32.124 0.0015743 31.9692 0.00402199 31.8138 0.00796542C26.3467 0.149521 20.4808 2.17984 14.6023 6.86191L13.7642 7.52958L12.9672 6.81568C11.2091 5.2413 10.1479 3.05814 9.40031 0.871168C8.15254 5.89972 7.36597 11.9379 8.11666 16.444C10.6285 16.5675 14.4305 16.148 18.3642 15.3809C20.8472 14.8967 23.3764 14.276 25.7424 13.6034C23.8765 13.2076 22.1417 12.6676 20.4388 11.9605L18.2019 11.0315L20.2745 9.79039C26.7215 5.9295 31.532 4.25789 36.9924 4.95588C41.5954 5.54427 46.636 7.79338 53.5477 11.3838C50.0198 6.44582 44.8932 2.58085 38.986 0.914138C36.8444 0.309977 34.5987 -0.0143354 32.2787 0.000486461ZM44.4939 12.9428C38.0052 12.9428 38.0053 12.9428 38.0053 19.2885V44.6806C38.0053 45.9855 38.0063 47.0181 38.0629 47.8411C40.3876 47.1972 42.7372 46.6428 45.1063 46.179C48.5335 45.5106 51.8314 45.0607 54.5495 45.0354C55.4557 45.027 56.2975 45.0658 57.058 45.1594L57.9354 45.2672L58.1242 46.1121C58.4668 47.6439 58.6349 49.3004 58.6684 51.0154C63.9565 50.9895 63.96 50.5993 63.96 44.6719V19.2883C63.96 12.9428 63.96 12.9428 57.4714 12.9428C57.6625 13.2857 57.8469 13.632 58.0245 13.9817L59.7798 17.4541L56.3032 15.5982C54.4838 14.6269 52.8043 13.7446 51.2347 12.9428H44.4939ZM5.29158 12.945C0.042294 13.3686 0.0172227 13.5365 0 19.2885V44.6806C0 51.0173 0 51.0173 6.4886 51.0173C6.29753 50.6744 6.11312 50.3281 5.93549 49.9784L4.1802 46.506L7.65685 48.362C9.47623 49.3332 11.1557 50.2157 12.7253 51.0173H19.4661C25.9548 51.0173 25.9547 51.0173 25.9547 44.6716V19.2885C25.9547 17.9795 25.9539 16.9442 25.8968 16.1196C23.5723 16.7633 21.2227 17.3176 18.8537 17.7813C14.2841 18.6725 9.94425 19.1751 6.90198 18.8008L6.02462 18.693L5.83579 17.8482C5.49319 16.3163 5.32509 14.66 5.29158 12.945ZM54.599 47.4946C52.1598 47.5286 48.9224 47.9305 45.596 48.5793C43.1128 49.0634 40.5835 49.6841 38.2176 50.3568C40.0835 50.7525 41.8183 51.2925 43.5212 51.9997L45.7581 52.9288L43.6855 54.1699C37.2385 58.0306 32.428 59.7022 26.9676 59.0044C22.3646 58.416 17.324 56.1667 10.4123 52.5763C13.9402 57.5144 19.0668 61.3794 24.974 63.046C32.2839 65.1082 40.8072 63.9085 49.3577 57.0982L50.1958 56.4305L50.9928 57.1444C52.7509 58.7189 53.8121 60.902 54.5597 63.0891C55.8075 58.0604 56.594 52.0222 55.8433 47.5161C55.4557 47.497 55.0443 47.4883 54.599 47.4946Z
+                                </Geometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Button>
+                <Button Style="{StaticResource EducationFuncButton}" Click="NextCard_Click" Focusable="False" VerticalAlignment="Center" Margin="0,0,58,0" HorizontalAlignment="Center" Width="23.4002990722656" Height="26.0006008148193">
+                    <Path Fill="#FFACC7EC">
+                        <Path.Data>
+                            <GeometryGroup FillRule="Nonzero">
+                                <Geometry>
+                                    M1.90735e-06 26.0006L18.2002 13.0003L-3.6567e-07 4.42993e-06L1.90735e-06 26.0006ZM18.2002 13.0003L18.2002 26.0006L23.4003 26.0006L23.4003 2.38419e-06L18.2002 2.8388e-06L18.2002 13.0003Z
+                                </Geometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Button>
+                <Button Style="{StaticResource EducationFuncButton}" Click="FavoriteCard_Click" Focusable="False" VerticalAlignment="Center" HorizontalAlignment="Center" Width="36.9852561950684" Height="35.3232498168945">
+                    <Path Fill="#FFACC7EC">
+                        <Path.Data>
+                            <GeometryGroup FillRule="Nonzero">
+                                <Geometry>
+                                    M16 26.799L23.7598 31.7098C25.1808 32.6098 26.9198 31.2794 26.5458 29.5968L24.489 20.3622L31.3513 14.1405C32.604 13.0058 31.9309 10.8536 30.2855 10.7167L21.2542 9.91452L17.7202 1.18857C17.0845 -0.396189 14.9155 -0.396189 14.2798 1.18857L10.7458 9.89495L1.71455 10.6971C0.069104 10.8341 -0.604033 12.9862 0.648749 14.121L7.511 20.3426L5.4542 29.5773C5.08023 31.2598 6.81917 32.5902 8.24023 31.6903L16 26.799Z
+                                </Geometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+        <Border Background="#FF132134" BorderThickness="1" BorderBrush="#FFAA5712" x:Name="NoCardsBorder" Opacity="0" d:Opacity="1" Width="442" Height="176" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Padding="0" FontSize="30" Content="{DynamicResource EducationPage5}" Foreground="#FFACC7EC" FontFamily="{StaticResource Source Sans Pro}" HorizontalAlignment="Center"/>
+                <Label Padding="0" FontSize="20" Content="{DynamicResource EducationPage6}" Foreground="#FFACC7EC" FontFamily="{StaticResource Source Sans Pro}" VerticalAlignment="Center"/>
+
+            </StackPanel>
+        </Border>
+        <Border x:Name="CardBorder" Opacity="0" d:Opacity="1" Background="#FF132134" CornerRadius="22" BorderThickness="1" BorderBrush="#FFAA5712" Height="550" Width="470" Margin="0,0,0,80">
+            <Grid>
+                <Button Background="Transparent" Click="FlipCard_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label x:Name="CardNumLabel" Padding="0,0,0,0" d:Content="№1" Foreground="#FFACC7EC" FontSize="36" FontFamily="{StaticResource Source Sans Pro}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,17,0,0"/>
+                <Path x:Name="CardFavoritePath" Fill="Transparent" Stroke="#FFFB7401" StrokeThickness="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0">
+                    <Path.Data>
+                        <GeometryGroup FillRule="Nonzero">
+                            <Geometry>
+                                M16 26.799L23.7598 31.7098C25.1808 32.6098 26.9198 31.2794 26.5458 29.5968L24.489 20.3622L31.3513 14.1405C32.604 13.0058 31.9309 10.8536 30.2855 10.7167L21.2542 9.91452L17.7202 1.18857C17.0845 -0.396189 14.9155 -0.396189 14.2798 1.18857L10.7458 9.89495L1.71455 10.6971C0.069104 10.8341 -0.604033 12.9862 0.648749 14.121L7.511 20.3426L5.4542 29.5773C5.08023 31.2598 6.81917 32.5902 8.24023 31.6903L16 26.799Z
+                            </Geometry>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+                <TextBlock x:Name="CardContentTextBlock" FontFamily="{StaticResource Source Sans Pro}" TextWrapping="Wrap" Foreground="#FFFB7401" FontSize="36" d:Text="rteurtyuyrtityityuituyituituyoituoityuoyuto" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,0,50,0"/>
+            </Grid>
+        </Border>
+        <Grid Width="268" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="500"/>
+                <RowDefinition Height="164"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="BurgerBorder" Grid.Row="0" Visibility="Hidden" d:Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="#FF142134" BorderThickness="0,0,0,2" BorderBrush="Transparent" Height="93">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="13,0,0,14">
+                        <Path Fill="#FFACC7EC" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Path.Data>
+                                <GeometryGroup FillRule="Nonzero">
+                                    <Geometry>
+                                        M21.7155 2.32094L20.2345 1.70202V11.682L22.9202 5.20553C23.3733 4.07822 22.8539 2.78512 21.7155 2.32094ZM0.163958 6.41021L5.64579 19.6174C5.80721 20.0193 6.08255 20.3652 6.43796 20.6126C6.79337 20.86 7.21334 20.9981 7.64621 21.01C7.93357 21.01 8.23197 20.9547 8.51933 20.8332L16.6647 17.4623C17.4936 17.1197 18.002 16.3018 18.0241 15.484C18.0352 15.1966 17.9799 14.8761 17.8804 14.5887L12.3544 1.38151C12.1982 0.977025 11.9238 0.62893 11.567 0.382531C11.2103 0.136131 10.7876 0.00283788 10.354 0C10.0666 0 9.77927 0.0663126 9.50296 0.165781L1.36863 3.53666C0.827926 3.75809 0.39728 4.18517 0.171377 4.72403C-0.0545265 5.26288 -0.057195 5.86939 0.163958 6.41021ZM18.0131 2.21042C18.0131 1.62418 17.7802 1.06195 17.3656 0.647416C16.9511 0.232882 16.3889 0 15.8026 0H14.2001L18.0131 9.21743
+                                    </Geometry>
+                                </GeometryGroup>
+                            </Path.Data>
+                        </Path>
+                        <Label Content="{DynamicResource EducationPage1}" FontSize="19" Padding="0" FontFamily="{StaticResource Source Sans Pro}" Foreground="#FFBABABA" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Background="#FF142134" BorderThickness="0,0,0,2" BorderBrush="Transparent">
+                    <ListView x:Name="EducationList" Grid.Row="1" SelectionChanged="EducationList_SelectionChanged" Style="{StaticResource EducationList}" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+                </Border>
+                <Border Grid.Row="2" Background="#FF142134" BorderBrush="Transparent" CornerRadius="0,0,4.8,0" >
+                    <StackPanel HorizontalAlignment="Left" Margin="13,0,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Path Fill="#FFACC7EC" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Path.Data>
+                                    <GeometryGroup FillRule="Nonzero">
+                                        <Geometry>
+                                            M10 20.0005C15.523 20.0005 20 17.9865 20 15.5005C20 14.2345 18.837 13.0905 16.965 12.2715C15.823 14.3675 14.082 16.1745 11.87 17.1195C11.2787 17.3712 10.6426 17.5009 10 17.5009C9.35735 17.5009 8.72132 17.3712 8.13 17.1195C5.918 16.1745 4.177 14.3675 3.035 12.2715C1.163 13.0905 0 14.2355 0 15.5025C0 17.9855 4.477 20.0005 10 20.0005Z
+                                        </Geometry>
+                                        <Geometry>
+                                            M3 6.515C3 2.917 6.134 0 10 0C13.866 0 17 2.917 17 6.515C17 10.085 14.766 14.25 11.28 15.74C10.8751 15.9118 10.4398 16.0003 10 16.0003C9.56019 16.0003 9.12487 15.9118 8.72 15.74C5.234 14.25 3 10.084 3 6.515ZM10 9C10.5304 9 11.0391 8.78929 11.4142 8.41421C11.7893 8.03914 12 7.53043 12 7C12 6.46957 11.7893 5.96086 11.4142 5.58579C11.0391 5.21071 10.5304 5 10 5C9.46957 5 8.96086 5.21071 8.58579 5.58579C8.21071 5.96086 8 6.46957 8 7C8 7.53043 8.21071 8.03914 8.58579 8.41421C8.96086 8.78929 9.46957 9 10 9Z
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                            <Label Content="{DynamicResource EducationPage2}" FontSize="19" Padding="0" FontFamily="{StaticResource Source Sans Pro}" Foreground="#FFBABABA" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Path Fill="#FFACC7EC" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Path.Data>
+                                    <GeometryGroup FillRule="Nonzero">
+                                        <Geometry>
+                                            M19 8.13C18.85 8.14 18.71 8.19 18.61 8.3L17.61 9.3L19.66 11.3L20.66 10.3C20.88 10.09 20.88 9.74 20.66 9.53L19.42 8.3C19.3201 8.19635 19.1839 8.13542 19.04 8.13M17.04 9.88L11 15.94V18H13.06L19.12 11.93M18 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V14C0 14.5304 0.210714 15.0391 0.585786 15.4142C0.960859 15.7893 1.46957 16 2 16H9V15.11L17.24 6.89C17.71 6.4 18.36 6.13 19.04 6.13C19.38 6.13 19.72 6.19 20.04 6.32V2C20.04 0.88 19.12 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                            <Label Content="{DynamicResource EducationPage3}" FontSize="19" Padding="0" FontFamily="{StaticResource Source Sans Pro}" Foreground="#FFBABABA" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                            <Path Fill="#FFACC7EC" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Path.Data>
+                                    <GeometryGroup FillRule="Nonzero">
+                                        <Geometry>
+                                            M10 16.25C14.4883 16.25 18.125 12.6133 18.125 8.125C18.125 3.63672 14.4883 0 10 0C5.51172 0 1.875 3.63672 1.875 8.125C1.875 12.6133 5.51172 16.25 10 16.25ZM9.13281 3.80469V3.14844C9.13281 2.78906 9.42188 2.5 9.78125 2.5H10.2148C10.5742 2.5 10.8633 2.78906 10.8633 3.14844V3.8125C11.4688 3.84375 12.0547 4.05078 12.543 4.41406C12.7617 4.57422 12.7852 4.89453 12.5898 5.08203L11.9531 5.6875C11.8047 5.83203 11.582 5.83594 11.4062 5.72656C11.1953 5.59375 10.9609 5.52734 10.7109 5.52734H9.19141C8.83984 5.52734 8.55469 5.84766 8.55469 6.24219C8.55469 6.5625 8.75 6.84766 9.02734 6.92969L11.4609 7.66016C12.4648 7.96094 13.168 8.92578 13.168 10.0078C13.168 11.3359 12.1367 12.4102 10.8594 12.4453V13.1016C10.8594 13.4609 10.5703 13.75 10.2109 13.75H9.77734C9.41797 13.75 9.12891 13.4609 9.12891 13.1016V12.4375C8.52344 12.4062 7.9375 12.1992 7.44922 11.8359C7.23047 11.6758 7.20703 11.3555 7.40234 11.168L8.03906 10.5625C8.1875 10.418 8.41016 10.4141 8.58594 10.5234C8.79688 10.6562 9.03125 10.7227 9.28125 10.7227H10.8008C11.1523 10.7227 11.4375 10.4023 11.4375 10.0078C11.4375 9.6875 11.2422 9.40234 10.9648 9.32031L8.53125 8.58984C7.52734 8.28906 6.82422 7.32422 6.82422 6.24219C6.82812 4.91406 7.85547 3.83984 9.13281 3.80469ZM18.75 13.75H17.4805C16.7148 14.7656 15.7383 15.6133 14.6289 16.25H17.1211C17.3281 16.25 17.4961 16.3906 17.4961 16.5625V17.1875C17.4961 17.3594 17.3281 17.5 17.1211 17.5H2.875C2.66797 17.5 2.5 17.3594 2.5 17.1875V16.5625C2.5 16.3906 2.66797 16.25 2.875 16.25H5.36719C4.25781 15.6133 3.28516 14.7656 2.51562 13.75H1.25C0.558594 13.75 0 14.3086 0 15V18.75C0 19.4414 0.558594 20 1.25 20H18.75C19.4414 20 20 19.4414 20 18.75V15C20 14.3086 19.4414 13.75 18.75 13.75Z
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                            <Label Content="{DynamicResource EducationPage4}" FontSize="19" Padding="0" FontFamily="{StaticResource Source Sans Pro}" Foreground="#FFC5600C" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Button Style="{StaticResource EducationBurgerButton}" Focusable="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,16,0,0" Click="Burger_Click" Width="22.8658008575439" Height="20.4589004516602" Tag="rolled">
+                <Path Fill="#FFFB7401">
+                    <Path.Data>
+                        <GeometryGroup FillRule="Nonzero">
+                            <Geometry>
+                                M21.0606 16.8485C21.5242 16.8487 21.9699 17.0273 22.3055 17.3472C22.641 17.6671 22.8406 18.1039 22.8628 18.5669C22.8851 19.03 22.7284 19.4839 22.4251 19.8345C22.1219 20.1852 21.6953 20.4057 21.2339 20.4505L21.0606 20.4589H1.8052C1.3416 20.4587 0.895865 20.2801 0.560349 19.9602C0.224833 19.6402 0.0252583 19.2035 0.00297946 18.7404C-0.0192993 18.2774 0.137426 17.8235 0.440679 17.4728C0.743932 17.1222 1.17047 16.9017 1.6319 16.8569L1.8052 16.8485H21.0606ZM21.0606 8.42425C21.5394 8.42425 21.9985 8.61444 22.3371 8.95298C22.6756 9.29152 22.8658 9.75067 22.8658 10.2294C22.8658 10.7082 22.6756 11.1674 22.3371 11.5059C21.9985 11.8444 21.5394 12.0346 21.0606 12.0346H1.8052C1.32643 12.0346 0.867269 11.8444 0.52873 11.5059C0.19019 11.1674 0 10.7082 0 10.2294C0 9.75067 0.19019 9.29152 0.52873 8.95298C0.867269 8.61444 1.32643 8.42425 1.8052 8.42425H21.0606ZM21.0606 0C21.5394 0 21.9985 0.19019 22.3371 0.52873C22.6756 0.867269 22.8658 1.32643 22.8658 1.8052C22.8658 2.28396 22.6756 2.74312 22.3371 3.08166C21.9985 3.4202 21.5394 3.61039 21.0606 3.61039H1.8052C1.32643 3.61039 0.867269 3.4202 0.52873 3.08166C0.19019 2.74312 0 2.28396 0 1.8052C0 1.32643 0.19019 0.867269 0.52873 0.52873C0.867269 0.19019 1.32643 0 1.8052 0H21.0606Z
+                            </Geometry>
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

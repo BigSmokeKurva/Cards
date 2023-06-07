@@ -1,0 +1,243 @@
+﻿<UserControl x:Class="Cards.EditorPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cards"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Background="#FF0C1624" Focusable="True" MouseDown="UserControl_MouseDown">
+    <UserControl.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <local:NullOrNumberToVisibilityConverter x:Key="NullOrNumberToVisibilityConverter"/>
+        <local:ListViewItemToStringConverter x:Key="ListViewItemToStringConverter"/>
+        <Style x:Key="EditorTextBox" TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                                <Label x:Name="placeholder" Content="{DynamicResource EditorPage7}" Padding="0" FontSize="15" FontFamily="{StaticResource Source Sans Pro}" Foreground="#FFBABABA" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                    <Condition Property="IsFocused" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter TargetName="placeholder" Property="Visibility" Value="Visible"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="FontFamily" Value="{StaticResource Source Sans Pro}"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="#FF141E2C"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="Padding" Value="3"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="MainGrid">
+        <Grid Margin="52,52,52,121">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="3.5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="#FF142134" CornerRadius="3.89">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="{DynamicResource EditorPage1}" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="29" Margin="0,31,0,16"/>
+                    <ListView x:Name="DecksListView" Grid.Row="1" Style="{StaticResource EditorList}" Margin="15,0,15,0" SelectionChanged="DecksListView_SelectionChanged"/>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,25,0,22">
+                        <Button Style="{StaticResource EditorFuncButton}" Visibility="{Binding ElementName=DecksListView, Path=SelectedIndex, Converter={StaticResource ResourceKey=NullOrNumberToVisibilityConverter}}" Focusable="False" Click="DeleteDeckButton">
+                            <Path Stroke="#FFFB7401" StrokeThickness="2">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>
+                                            M19.8236 4.5293L18.4821 19.4688C18.4392 19.8906 18.2641 20.2795 17.99 20.5617C17.7159 20.844 17.3619 20.9999 16.9951 20.9999H6.18204C5.81523 20.9999 5.46119 20.844 5.18708 20.5617C4.91298 20.2795 4.73788 19.8906 4.69501 19.4688L3.35303 4.5293
+                                        </Geometry>
+                                        <Geometry>
+                                            M21.4202 1H1.7563C1.33861 1 1 1.31603 1 1.70588V3.82353C1 4.21338 1.33861 4.52941 1.7563 4.52941H21.4202C21.8379 4.52941 22.1765 4.21338 22.1765 3.82353V1.70588C22.1765 1.31603 21.8379 1 21.4202 1Z
+                                        </Geometry>
+                                        <Geometry>
+                                            M13.9412 10.4121L9.23535 16.2945M13.9412 16.2945L9.23535 10.4121
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Button>
+                        <Button Style="{StaticResource EditorFuncButton}" Margin="10,0,10,0" Click="CreateDeckButton" Focusable="False">
+                            <Path Fill="#FFFB7401">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>
+                                            M24.8213 14.3848L24.8213 11.7524L14.385 11.7524L14.385 1.3162H11.7527L11.7527 11.7524L1.31643 11.7524L1.31642 14.3848L11.7527 14.3848L11.7527 24.821H14.385L14.385 14.3848L24.8213 14.3848Z
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Button>
+                        <Button Style="{StaticResource EditorFuncButton}" Visibility="{Binding ElementName=DecksListView, Path=SelectedIndex, Converter={StaticResource ResourceKey=NullOrNumberToVisibilityConverter}}" Click="EditDeckButton">
+                            <Path Stroke="#FFFB7401" StrokeThickness="2">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>
+                                            M12.7647 15.08L8.15137 15.9104L8.92026 11.2356L17.7317 2.45487C17.8747 2.31074 18.0447 2.19634 18.2321 2.11827C18.4195 2.04019 18.6205 2 18.8235 2C19.0265 2 19.2275 2.04019 19.4149 2.11827C19.6023 2.19634 19.7724 2.31074 19.9154 2.45487L21.5454 4.08491C21.6895 4.22787 21.8039 4.39795 21.882 4.58534C21.9601 4.77273 22.0003 4.97373 22.0003 5.17673C22.0003 5.37974 21.9601 5.58073 21.882 5.76813C21.8039 5.95552 21.6895 6.1256 21.5454 6.26856L12.7647 15.08Z
+                                        </Geometry>
+                                        <Geometry>
+                                            M19.6844 15.8497V20.463C19.6844 20.8709 19.5224 21.262 19.234 21.5504C18.9456 21.8388 18.5545 22.0008 18.1466 22.0008H3.53778C3.12993 22.0008 2.73879 21.8388 2.4504 21.5504C2.16202 21.262 2 20.8709 2 20.463V5.85418C2 5.44634 2.16202 5.0552 2.4504 4.76681C2.73879 4.47842 3.12993 4.31641 3.53778 4.31641H8.1511
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border Grid.Column="2" Background="#FF142134" CornerRadius="3.89">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="{DynamicResource EditorPage2}" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="29" Margin="0,31,0,16"/>
+                    <ListView x:Name="CardsListView" Grid.Row="1" Style="{StaticResource EditorList}" Margin="15,0,15,0" SelectionChanged="CardsListView_SelectionChanged"/>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,25,0,22">
+                        <Button Style="{StaticResource EditorFuncButton}" Visibility="{Binding ElementName=CardsListView, Path=SelectedIndex, Converter={StaticResource ResourceKey=NullOrNumberToVisibilityConverter}, ConverterParameter=Visibility.Collapsed}" Focusable="False" Click="DeleteCardButton">
+                            <Path Stroke="#FFFB7401" StrokeThickness="2">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>
+                                            M19.8236 4.5293L18.4821 19.4688C18.4392 19.8906 18.2641 20.2795 17.99 20.5617C17.7159 20.844 17.3619 20.9999 16.9951 20.9999H6.18204C5.81523 20.9999 5.46119 20.844 5.18708 20.5617C4.91298 20.2795 4.73788 19.8906 4.69501 19.4688L3.35303 4.5293
+                                        </Geometry>
+                                        <Geometry>
+                                            M21.4202 1H1.7563C1.33861 1 1 1.31603 1 1.70588V3.82353C1 4.21338 1.33861 4.52941 1.7563 4.52941H21.4202C21.8379 4.52941 22.1765 4.21338 22.1765 3.82353V1.70588C22.1765 1.31603 21.8379 1 21.4202 1Z
+                                        </Geometry>
+                                        <Geometry>
+                                            M13.9412 10.4121L9.23535 16.2945M13.9412 16.2945L9.23535 10.4121
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Button>
+                        <Button Style="{StaticResource EditorFuncButton}" Margin="10,0,0,0" Visibility="{Binding ElementName=DecksListView, Path=SelectedIndex, Converter={StaticResource ResourceKey=NullOrNumberToVisibilityConverter}}" Focusable="False" Click="CreateCardButton">
+                            <Path Fill="#FFFB7401">
+                                <Path.Data>
+                                    <GeometryGroup>
+                                        <Geometry>
+                                            M24.8213 14.3848L24.8213 11.7524L14.385 11.7524L14.385 1.3162H11.7527L11.7527 11.7524L1.31643 11.7524L1.31642 14.3848L11.7527 14.3848L11.7527 24.821H14.385L14.385 14.3848L24.8213 14.3848Z
+                                        </Geometry>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+            <Border Grid.Column="4" Background="#FF142134" CornerRadius="3.89">
+                <Grid d:Visibility="Visible" Visibility="{Binding ElementName=CardsListView, Path=HasItems, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="{DynamicResource EditorPage3}" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="29" Margin="0,31,0,16"/>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="51"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="95"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="51"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" Background="#FF1A2638" BorderThickness="1" BorderBrush="#FF273243" CornerRadius="18.61">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="79"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="1" Content="{Binding ElementName=CardsListView, Path=SelectedItem, Converter={StaticResource ListViewItemToStringConverter}}" HorizontalAlignment="Center" Padding="0" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="19"/>
+                                <Label Grid.Row="3" Content="{DynamicResource EditorPage4}" HorizontalAlignment="Center" Padding="0" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="19"/>
+                                <TextBox Grid.Row="5" Text="" Style="{StaticResource EditorTextBox}" Margin="10,0,10,0" x:Name="WordTextBox"/>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Column="3" Background="#FF1A2638" BorderThickness="1" BorderBrush="#FF273243" CornerRadius="18.61">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="21"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="79"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="1" Content="{Binding ElementName=CardsListView, Path=SelectedItem, Converter={StaticResource ListViewItemToStringConverter}}" HorizontalAlignment="Center" Padding="0" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="19"/>
+                                <Label Grid.Row="3" Content="{DynamicResource EditorPage5}" HorizontalAlignment="Center" Padding="0" VerticalAlignment="Top" Foreground="#ffffff" FontFamily="{StaticResource Source Sans Pro}" FontSize="19"/>
+                                <TextBox Grid.Row="5" Text="" Style="{StaticResource EditorTextBox}" Margin="10,0,10,0" x:Name="TranslationTextBox"/>
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                    <Button Content="{DynamicResource EditorPage6}" Grid.Row="2" Margin="0,51,0,38" Click="SaveButton">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="3.89" BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"/>
+                                                </Border>
+                                                <Border x:Name="DimmingBorder" Background="{StaticResource DimmingСolor}" CornerRadius="5" BorderThickness="{TemplateBinding BorderThickness}" Visibility="Collapsed"/>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsPressed" Value="True">
+                                                    <Setter TargetName="DimmingBorder" Property="Visibility" Value="Visible"/>
+                                                    <Setter Property="BorderThickness" Value="2"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="FontFamily" Value="{StaticResource Source Sans Pro}"/>
+                                <Setter Property="Height" Value="47"/>
+                                <Setter Property="Width" Value="165"/>
+                                <Setter Property="FontSize" Value="18"/>
+                                <Setter Property="Background" Value="#FFFB7401"/>
+                                <Setter Property="Foreground" Value="#ffffff"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

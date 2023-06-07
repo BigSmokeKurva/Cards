@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=netstandard">
+    <system:String x:Key="LoginPage1">Здравствуйте!</system:String>
+    <system:String x:Key="LoginPage2">Пожалуйста выберите режим работы.</system:String>
+    <system:String x:Key="LoginPage3">Обучение</system:String>
+    <system:String x:Key="LoginPage4">Редактор</system:String>
+    <system:String x:Key="EducationPage1">Колоды</system:String>
+    <system:String x:Key="EducationPage2">F.A.Q</system:String>
+    <system:String x:Key="EducationPage3">Написать нам</system:String>
+    <system:String x:Key="EducationPage4">Поддержать нас</system:String>
+    <system:String x:Key="EducationPage5">Упс</system:String>
+    <system:String x:Key="EducationPage6">У вас еще нет ни одной карточки!</system:String>
+    <system:String x:Key="EducationPage7">Избранное</system:String>
+    <system:String x:Key="EditorPage1">Колоды</system:String>
+    <system:String x:Key="EditorPage2">Карты</system:String>
+    <system:String x:Key="EditorPage3">Редактирование</system:String>
+    <system:String x:Key="EditorPage4">слово</system:String>
+    <system:String x:Key="EditorPage5">перевод</system:String>
+    <system:String x:Key="EditorPage6">Сохранить</system:String>
+    <system:String x:Key="EditorPage7">Впишите слово или фразу</system:String>
+    <system:String x:Key="EditorPage8">Удалено</system:String>
+    <system:String x:Key="EditorPage9">Сохранено</system:String>
+    <system:String x:Key="EditorPage10">Карта</system:String>
+    <system:String x:Key="HubControl1">ОБУЧЕНИЕ</system:String>
+    <system:String x:Key="HubControl2">СОЗДАНИЕ</system:String>
+    <system:String x:Key="CreateDeckControl1">Введите название колоды</system:String>
+    <system:String x:Key="CreateDeckControl2">Создание</system:String>
+    <system:String x:Key="CreateDeckControl3">Создать</system:String>
+    <system:String x:Key="CreateDeckControl4">Редактирование</system:String>
+    <system:String x:Key="CreateDeckControl5">Сохранить</system:String>
+    <system:String x:Key="DeleteDeckControl1">Удалить?</system:String>
+    <system:String x:Key="DeleteDeckControl2">Да</system:String>
+    <system:String x:Key="DeleteDeckControl3">Нет</system:String>
+</ResourceDictionary>
